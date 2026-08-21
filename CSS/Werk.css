@@ -1,0 +1,95 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+.werk-grid {
+  display: grid;
+  grid-template-columns: 40px repeat(12, 40px);
+  gap: 5px;
+  margin: 40px;
+}
+
+.header,
+.dag {
+  background: #750000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  display: flex;             
+  justify-content: center;     
+  align-items: center;        
+}
+
+.vak {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background: #750000;
+  cursor: pointer;
+}
+
+.vak.zwart {
+  background: #000000;
+  border: 1px solid #000000;
+  cursor: default;
+}
+
+.werk-container {
+  width: 100%;             
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+.legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;   
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kleur-box {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
