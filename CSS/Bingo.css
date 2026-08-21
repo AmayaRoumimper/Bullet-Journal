@@ -1,0 +1,80 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px; 
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; 
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.bingo-vak {
+  background: #750000;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bingo-input {
+  max-width: 75%;
+  max-height: 75%;
+  background: #750000;
+  color: #ffffff;
+  border: 1px solid #750000;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Georgia", serif;
+}
+
+.bingo-vak.gekruist::after {
+  content: "✕";
+  font-size: 60px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
