@@ -12,6 +12,14 @@ document.getElementById("loginBtn").addEventListener("click", () => {
         });
 });
 
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    firebase.auth().signOut().then(() => {
+        // Terug naar login-scherm
+        document.getElementById("login").style.display = "block";
+        document.getElementById("content").style.display = "none";
+    });
+});
+
 // Automatisch ingelogd blijven
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -23,10 +31,3 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-document.getElementById("logoutBtn").addEventListener("click", () => {
-    firebase.auth().signOut().then(() => {
-        // Terug naar login-scherm
-        document.getElementById("login").style.display = "block";
-        document.getElementById("content").style.display = "none";
-    });
-});
