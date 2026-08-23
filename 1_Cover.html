@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
 
-<nav>
-    <a href="2_Jaarlog.html">Jaarlog</a>
-    <a href="Maandlog.html">Maandlog</a>
-</nav>
-
 <head>
     <meta charset="UTF-8">
     <title>Bullet Journal – Cover</title>
@@ -13,17 +8,35 @@
 </head>
 
 <body>
-    <div class="cover-container">
-        <h1 class="title">Bullet Journal</h1>
-        <h2 class="subtitle">Amaya Roumimper</h2>
-
-        <div class="divider"></div>
-
-        <p class="quote">2026</p>
+    <div id="login">
+        <h2>Log in</h2>
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="password" id="password" placeholder="Wachtwoord">
+        <button id="loginBtn">Log in</button>
+        <p id="loginError" style="color:red; display:none;">Login mislukt</p>
     </div>
 
+    <div id="content" style="display:none;">
+
+        <nav>
+            <a href="2_Jaarlog.html">Jaarlog</a>
+            <a href="Maandlog.html">Maandlog</a>
+        </nav>
+
+        <div class="cover-container">
+            <h1 class="title">Bullet Journal</h1>
+            <h2 class="subtitle">Amaya Roumimper</h2>
+
+            <div class="divider"></div>
+
+            <p class="quote">2026</p>
+        </div>
+
+    </div>
+
+    <!-- Firebase + Auth -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
     <script>
         const firebaseConfig = {
@@ -37,9 +50,9 @@
         };
 
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
     </script>
-    <script src="CSS/Cover.js"></script>
+
+    <script src="JS/Cover.js"></script>
 
 </body>
 
