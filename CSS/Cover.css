@@ -1,13 +1,13 @@
 body {
   font-family: "Georgia", serif;
   background: #000000;
-  margin: 0;
+  margin: 40px;
   padding: 0;
-  height: 100vh;
-  display: flex;
+  padding-top: 40px; 
+  display: block;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #ffffff; 
 }
 
 nav {
