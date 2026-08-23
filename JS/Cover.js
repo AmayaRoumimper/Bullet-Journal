@@ -20,7 +20,6 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
     });
 });
 
-// Automatisch ingelogd blijven
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         document.getElementById("login").style.display = "none";
