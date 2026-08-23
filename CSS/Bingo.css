@@ -32,6 +32,24 @@ nav a:hover {
   color: #ffffff;
 }
 
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
 .title {
   text-align: center;
   font-size: 3rem;
