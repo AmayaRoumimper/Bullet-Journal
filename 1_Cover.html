@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<nav>
+    <a href="2_Jaarlog.html">Jaarlog</a>
+    <a href="Maandlog.html">Maandlog</a>
+</nav>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bullet Journal – Cover</title>
+    <link rel="stylesheet" href="CSS/Cover.css">
+</head>
+
+<body>
+    <div class="cover-container">
+        <h1 class="title">Bullet Journal</h1>
+        <h2 class="subtitle">Amaya Roumimper</h2>
+
+        <div class="divider"></div>
+
+        <p class="quote">2026</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCIr-9I4vy94bwj1KyeC9sj7M4tn19UMHo",
+            authDomain: "bullet-journal-25f7c.firebaseapp.com",
+            projectId: "bullet-journal-25f7c",
+            storageBucket: "bullet-journal-25f7c.firebasestorage.app",
+            messagingSenderId: "927237136494",
+            appId: "1:927237136494:web:e085ca853fd3d27a5bc67f",
+            measurementId: "G-NEP596Q73W"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="CSS/Cover.js"></script>
+
+</body>
+
+</html>
