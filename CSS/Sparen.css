@@ -1,0 +1,178 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+.spaarpot-layout {
+  display: grid;
+  grid-template-columns: 65px auto 65px;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  margin: 60px auto;
+  width: 550px;
+}
+
+.lijn-bedrag,
+.lijn-datum {
+  padding: 5px;
+  background: #500000;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 6px;
+  width: 75px;
+  font-size: 12px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.spaarpot {
+  position: relative;
+  width: 250px;
+  height: 500px;
+  border: 3px solid #fff;
+  border-radius: 60px 60px 40px 40px;
+  background: transparent;
+  overflow: visible;
+}
+
+/* --- DEKSEL --- */
+.deksel {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 20px;
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+}
+
+/* --- VULLING IN 10 BLOKJES --- */
+.vulling {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse; /* van onder naar boven */
+  overflow: hidden;
+  border-radius: 60px 60px 40px 40px;
+}
+
+.vul-blok {
+  width: 100%;
+  height: 10%; /* 10 blokjes = 10% per blok */
+  background: #a2dc03;
+  opacity: 0; /* onzichtbaar tot gevuld */
+  transition: opacity 0.3s ease;
+}
+
+
+.lijn-binnen {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.7);
+}
+
+/* --- RECHTE LIJNEN BUITEN DE POT --- */
+.lijnen-buiten {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  width: calc(100% + 300px);
+  height: 100%;
+  pointer-events: none; /* BELANGRIJK */
+}
+
+.lijn-buiten {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.7);
+  pointer-events: none; /* BELANGRIJK */
+}
+
+/* --- 10 LIJNEN OP PERFECTE HOOGTE --- */
+.lijn-binnen:nth-child(1),
+.lijn-buiten:nth-child(1) { top: 10%; }
+
+.lijn-binnen:nth-child(2),
+.lijn-buiten:nth-child(2) { top: 20%; }
+
+.lijn-binnen:nth-child(3),
+.lijn-buiten:nth-child(3) { top: 30%; }
+
+.lijn-binnen:nth-child(4),
+.lijn-buiten:nth-child(4) { top: 40%; }
+
+.lijn-binnen:nth-child(5),
+.lijn-buiten:nth-child(5) { top: 50%; }
+
+.lijn-binnen:nth-child(6),
+.lijn-buiten:nth-child(6) { top: 60%; }
+
+.lijn-binnen:nth-child(7),
+.lijn-buiten:nth-child(7) { top: 70%; }
+
+.lijn-binnen:nth-child(8),
+.lijn-buiten:nth-child(8) { top: 80%; }
+
+.lijn-binnen:nth-child(9),
+.lijn-buiten:nth-child(9) { top: 90%; }
+
+.lijn-binnen:nth-child(10),
+.lijn-buiten:nth-child(10) { top: 100%; }

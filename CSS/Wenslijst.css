@@ -59,8 +59,8 @@ nav a:hover {
   border: 2px solid #ffffff;
   border-radius: 6px;
   padding: 30px;
-  width: 55%;
-  margin: 20px auto;
+  width: 750px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
