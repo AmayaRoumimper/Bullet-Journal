@@ -1,0 +1,92 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+.wens-grid {
+  background: #750000;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 30px;
+  width: 40%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wens-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 30px;
+  align-items: center;
+}
+
+.wens-omschrijving{
+  padding: 8px;
+  border: 2px solid #fff;
+  background: #500000;
+  color: #fff;
+  border-radius: 6px;
+  width: 400px;
+}
+
+.wens-prijs {
+  padding: 8px;
+  border: 2px solid #fff;
+  background: #500000;
+  color: #fff;
+  border-radius: 6px;
+  width: 200px;
+}
