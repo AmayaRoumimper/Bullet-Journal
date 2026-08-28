@@ -3,9 +3,9 @@ body {
   background: #000000;
   margin: 40px;
   padding: 0;
-  padding-top: 40px; 
+  padding-top: 40px;
   display: block;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 nav {
@@ -54,37 +54,56 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.lied-grid {
-  width: 800px;
+.sleep-wrapper {
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  max-width: 1400px;
 }
 
-.lied-rij {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+.sleep-grid {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.maand-label {
-  font-family: "Georgia", serif;
-  font-size: 1.3rem;
-  color: #ffffff;
-  width: 150px;
-  text-align: right;
-}
-
-.lied-input,
-.artiest-input {
-  width: 300px;
-  padding: 8px;
-  background: #750000;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 6px;
-  font-family: "Georgia", serif;
+.sleep-grid th,
+.sleep-grid td {
+  border: 1px solid #636363;
   text-align: center;
+  padding: 0;
+  font-size: 12px;
+}
+
+.sleep-grid thead th {
+  background: #222;
+  font-weight: 600;
+}
+
+.sleep-grid tbody th {
+  background: #1a1a1a;
+  width: 50px;
+  font-weight: 600;
+}
+
+.hour-cell {
+  display: flex;
+  height: 20px;
+}
+
+/* kwartier-vakje */
+.quarter {
+  flex: 1;
+  background: #000;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-right: 1px solid #222;
+}
+
+/* laatste kwartier zonder extra lijn */
+.quarter:last-child {
+  border-right: none;
+}
+
+/* kleur wanneer kwartier actief is */
+.quarter.active {
+  background: #4caf50;
 }

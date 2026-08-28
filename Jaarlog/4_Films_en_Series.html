@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bullet Journal – Films en Series</title>
+    <link rel="stylesheet" href="../CSS/Films_en_Series.css">
+</head>
+
+<body>
+    <div id="login">
+        <h2>Log in</h2>
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="password" id="password" placeholder="Wachtwoord">
+        <button id="loginBtn">Log in</button>
+        <p id="loginError" style="color:red; display:none;">Login mislukt</p>
+    </div>
+
+    <div id="content" style="display:none;">
+
+        <button id="logoutBtn" class="logout-button">Uitloggen</button>
+
+        <nav>
+            <a href="../index.html">Cover</a>
+            <a href="3_Bingo.html">Bingo</a>
+            <a href="5_Boeken.html">Boeken</a>
+        </nav>
+
+        <h1 class="title">Films & Series</h1>
+
+        <div class="media-lijst">
+
+            <!-- ITEM 1 -->
+            <div class="media-item">
+                <select class="media-type" data-id="type1">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum1">
+
+                <input type="text" class="media-titel" data-id="titel1" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren1">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 2 -->
+                <select class="media-type" data-id="type2">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum2">
+
+                <input type="text" class="media-titel" data-id="titel2" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren2">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 3 -->
+                <select class="media-type" data-id="type3">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum3">
+
+                <input type="text" class="media-titel" data-id="titel3" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren3">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 4 -->
+                <select class="media-type" data-id="type4">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum4">
+
+                <input type="text" class="media-titel" data-id="titel4" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren4">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 5 -->
+                <select class="media-type" data-id="type5">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum5">
+
+                <input type="text" class="media-titel" data-id="titel5" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren5">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 6 -->
+                <select class="media-type" data-id="type6">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum6">
+
+                <input type="text" class="media-titel" data-id="titel6" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren6">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 7 -->
+                <select class="media-type" data-id="type7">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum7">
+
+                <input type="text" class="media-titel" data-id="titel7" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren7">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 8 -->
+                <select class="media-type" data-id="type8">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum8">
+
+                <input type="text" class="media-titel" data-id="titel8" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren8">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 9 -->
+                <select class="media-type" data-id="type9">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum9">
+
+                <input type="text" class="media-titel" data-id="titel9" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren9">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 10 -->
+                <select class="media-type" data-id="type10">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum10">
+
+                <input type="text" class="media-titel" data-id="titel10" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren10">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 11 -->
+                <select class="media-type" data-id="type11">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum11">
+
+                <input type="text" class="media-titel" data-id="titel11" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren11">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 12 -->
+                <select class="media-type" data-id="type12">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum12">
+
+                <input type="text" class="media-titel" data-id="titel12" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren12">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 13 -->
+                <select class="media-type" data-id="type13">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum13">
+
+                <input type="text" class="media-titel" data-id="titel13" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren13">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 14 -->
+                <select class="media-type" data-id="type14">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum14">
+
+                <input type="text" class="media-titel" data-id="titel14" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren14">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <!-- ITEM 15 -->
+                <select class="media-type" data-id="type15">
+                    <option value="">Soort...</option>
+                    <option value="Film">Film</option>
+                    <option value="Serie">Serie</option>
+                </select>
+
+                <input type="date" class="media-datum" data-id="datum15">
+
+                <input type="text" class="media-titel" data-id="titel15" placeholder="Titel...">
+
+                <select class="media-sterren" data-id="sterren15">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyCIr-9I4vy94bwj1KyeC9sj7M4tn19UMHo",
+                authDomain: "bullet-journal-25f7c.firebaseapp.com",
+                projectId: "bullet-journal-25f7c",
+                storageBucket: "bullet-journal-25f7c.firebasestorage.app",
+                messagingSenderId: "927237136494",
+                appId: "1:927237136494:web:e085ca853fd3d27a5bc67f",
+                measurementId: "G-NEP596Q73W"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+
+        <script src="../JS/Cover.js"></script>
+        <script src="../JS/Firebase-init.js"></script>
+        <script src="../JS/Films_en_Series.js"></script>
+
+</body>
+
+</html>

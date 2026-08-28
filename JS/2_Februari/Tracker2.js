@@ -1,0 +1,83 @@
+const trackerList = document.getElementById("tracker-list");
+
+// 8 grote vakken maken
+for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
+
+  const box = document.createElement("div");
+  box.classList.add("item-box");
+
+  // label bovenaan
+  const label = document.createElement("div");
+  label.classList.add("item-label");
+
+  const labelInput = document.createElement("input");
+  labelInput.type = "text";
+  labelInput.placeholder = "Naam...";
+
+  // ⭐ Unieke key
+  labelInput.dataset.key = `feb_tracker_label_${itemIndex}`;
+
+  // laad label
+  const savedLabel = localStorage.getItem(labelInput.dataset.key);
+  if (savedLabel) labelInput.value = savedLabel;
+
+  // opslaan label
+  labelInput.addEventListener("input", () => {
+    localStorage.setItem(labelInput.dataset.key, labelInput.value);
+  });
+
+  label.appendChild(labelInput);
+  box.appendChild(label);
+
+  // dag-vakjes
+  const grid = document.createElement("div");
+  grid.classList.add("days-grid");
+
+  // rij 1: 1 t/m 14
+  const row1 = document.createElement("div");
+  row1.classList.add("day-row");
+
+  for (let day = 1; day <= 14; day++) {
+    row1.appendChild(createDayCell(itemIndex, day));
+  }
+
+  // rij 2: 15 t/m 28
+  const row2 = document.createElement("div");
+  row2.classList.add("day-row");
+
+  for (let day = 15; day <= 28; day++) {
+    row2.appendChild(createDayCell(itemIndex, day));
+  }
+
+  grid.appendChild(row1);
+  grid.appendChild(row2);
+
+  box.appendChild(grid);
+  trackerList.appendChild(box);
+}
+
+// -----------------------------
+// Dagvakje maken
+// -----------------------------
+function createDayCell(itemIndex, dayNumber) {
+  const cell = document.createElement("div");
+  cell.classList.add("day-cell");
+
+  cell.textContent = dayNumber;
+
+  // ⭐ Unieke key
+  const key = `feb_tracker_item${itemIndex}_day${dayNumber}`;
+
+  // laad kleur
+  if (localStorage.getItem(key) === "1") {
+    cell.classList.add("active");
+  }
+
+  // klik togglen
+  cell.addEventListener("click", () => {
+    const active = cell.classList.toggle("active");
+    localStorage.setItem(key, active ? "1" : "0");
+  });
+
+  return cell;
+}

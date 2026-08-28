@@ -5,6 +5,8 @@ body {
   padding: 0;
   padding-top: 40px; 
   display: block;
+  justify-content: center;
+  align-items: center;
   color: #ffffff; 
 }
 
@@ -48,43 +50,62 @@ nav a:hover {
     background-color: #500000;
 }
 
-.title {
+.jaar-title {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 40px;
 }
 
-.lied-grid {
-  width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.maandlog-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.lied-rij {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+.maandlog-img {
+    width: 70%;
+    max-width: 600px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
 }
 
-.maand-label {
-  font-family: "Georgia", serif;
-  font-size: 1.3rem;
-  color: #ffffff;
-  width: 150px;
-  text-align: right;
+.sporten-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(12, 40px);
+  gap: 4px;
+  margin: 40px auto;
+  width: fit-content;
 }
 
-.lied-input,
-.artiest-input {
-  width: 300px;
-  padding: 8px;
+.header {
   background: #750000;
   color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 6px;
-  font-family: "Georgia", serif;
-  text-align: center;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
+
+.dag {
+  background: #750000;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+}
+
+.vak {
+  background: #750000;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+}
+
+.vak.gekozen {
+  background: #300000;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+

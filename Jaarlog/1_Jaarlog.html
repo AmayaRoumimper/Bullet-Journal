@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bullet Journal – Jaarlog</title>
+    <link rel="stylesheet" href="../CSS/Jaarlog.css">
+</head>
+
+<body>
+    <div id="login">
+        <h2>Log in</h2>
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="password" id="password" placeholder="Wachtwoord">
+        <button id="loginBtn">Log in</button>
+        <p id="loginError" style="color:red; display:none;">Login mislukt</p>
+    </div>
+
+    <div id="content" style="display:none;">
+
+        <button id="logoutBtn" class="logout-button">Uitloggen</button>
+
+        <nav>
+            <a href="../index.html">Cover</a>
+            <a href="2_Mooie_woorden.html">Mooie woorden</a>
+        </nav>
+
+        <h1 class="jaar-title">Verjaardagen</h1>
+
+        <div class="kalender-grid">
+            <div class="maand">
+                <h2>Januari</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td><span class="cirkel">8</span></td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>8 – Lindsey</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Februari</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="cirkel">3</span></td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td><span class="cirkel">7</span></td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td><span class="cirkel">27</span></td>
+                        <td>28</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>3 – Delano</li>
+                        <li>7 – Buurvrouw</li>
+                        <li>7 – Ties</li>
+                        <li>27 – Oma Helma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Maart</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td><span class="cirkel">18</span></td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td><span class="cirkel">29</span></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>18 – Ouders getrouwd</li>
+                        <li>29 – Niels (L)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>April</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><span class="cirkel">14</span></td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>14 – Denise</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Mei</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td><span class="cirkel">7</span></td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td><span class="cirkel">16</span></td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td><span class="cirkel">24</span></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>7 – Niels*</li>
+                        <li>16 – Oma Truus</li>
+                        <li>24 – Guido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Juni</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td><span class="cirkel">6</span></td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td><span class="cirkel">11</span></td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>6 – Angela</li>
+                        <li>11 – Neyo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Juli</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cirkel">13</span></td>
+                        <td><span class="cirkel">14</span></td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cirkel">20</span></td>
+                        <td><span class="cirkel">21</span></td>
+                        <td><span class="cirkel">22</span></td>
+                        <td>23</td>
+                        <td><span class="cirkel">24</span></td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>13 – Luca</li>
+                        <li>14 – Papa</li>
+                        <li>20 – Caithlyn</li>
+                        <li>21 – Maarten (S)</li>
+                        <li>22 – Shayenna</li>
+                        <li>24 – Ouders samen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Augustus</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="cirkel">4</span></td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cirkel">10</span></td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>4 – Yalisa</li>
+                        <li>10 – Niels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>September</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td><span class="cirkel">6</span></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cirkel">14</span></td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td><span class="cirkel">23</span></td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td><span class="cirkel">26</span></td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>6 – Opa Jan</li>
+                        <li>14 – Cora</li>
+                        <li>23 – Ruben (Y)</li>
+                        <li>26 – Sofia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>Oktober</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td><span class="cirkel">3</span></td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td><span class="cirkel">11</span></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td><span class="cirkel">25</span></td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>3 – Dante</li>
+                        <li>11 – René</li>
+                        <li>25 – Chelsey</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>November</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td><span class="cirkel">5</span></td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td><span class="cirkel">21</span></td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td><span class="cirkel">27</span></td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>5 – Oma Truus*</li>
+                        <li>21 – Opa Willy</li>
+                        <li>27 – Bella</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maand">
+                <h2>December</h2>
+                <table>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td><span class="cirkel">10</span></td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td><span class="cirkel">20</span></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td><span class="cirkel">24</span></td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="verjaardagen-lijst">
+                    <ul>
+                        <li>10 – Peggy</li>
+                        <li>20 – Mama</li>
+                        <li>24 – Jarig</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+        <script src="../JS/Firebase-init.js"></script>
+        <script src="../JS/Cover.js"></script>
+
+</body>
+
+</html>

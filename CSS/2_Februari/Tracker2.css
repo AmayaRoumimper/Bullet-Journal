@@ -1,0 +1,119 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.tracker-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.item-box {
+  border: 2px solid #fff;
+  background: #500000;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;           
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;              
+}
+
+.item-label {
+  width: 200px;            
+  display: flex;
+  align-items: center;
+}
+
+.item-label input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px;
+  outline: none;
+}
+
+
+.days-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-row {
+  display: grid;
+  grid-template-columns: repeat(16, 26px);
+  gap: 4px;
+}
+
+.day-cell {
+  width: 26px;
+  height: 26px;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.day-cell.active {
+  background: #4caf50;
+}

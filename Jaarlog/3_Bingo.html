@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bullet Journal – Bingo</title>
+    <link rel="stylesheet" href="../CSS/Bingo.css">
+</head>
+
+<body>
+    <div id="login">
+        <h2>Log in</h2>
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="password" id="password" placeholder="Wachtwoord">
+        <button id="loginBtn">Log in</button>
+        <p id="loginError" style="color:red; display:none;">Login mislukt</p>
+    </div>
+
+    <div id="content" style="display:none;">
+
+        <button id="logoutBtn" class="logout-button">Uitloggen</button>
+
+        <nav>
+            <a href="../index.html">Cover</a>
+            <a href="2_Mooie_woorden.html">Mooie woorden</a>
+            <a href="4_Films_en_Series.html">Films en Series</a>
+        </nav>
+
+        <h1 class="title">Bingo</h1>
+
+        <div class="bingo-grid">
+            <div class="bingo-vak" data-id="vak1">
+                <textarea class="bingo-input" data-text="vak1-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak2">
+                <textarea class="bingo-input" data-text="vak2-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak3">
+                <textarea class="bingo-input" data-text="vak3-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak4">
+                <textarea class="bingo-input" data-text="vak4-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak5">
+                <textarea class="bingo-input" data-text="vak5-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak6">
+                <textarea class="bingo-input" data-text="vak6-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak7">
+                <textarea class="bingo-input" data-text="vak7-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak8">
+                <textarea class="bingo-input" data-text="vak8-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak9">
+                <textarea class="bingo-input" data-text="vak9-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak10">
+                <textarea class="bingo-input" data-text="vak10-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak11">
+                <textarea class="bingo-input" data-text="vak11-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak12">
+                <textarea class="bingo-input" data-text="vak12-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak13">
+                <textarea class="bingo-input" data-text="vak13-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak14">
+                <textarea class="bingo-input" data-text="vak14-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak15">
+                <textarea class="bingo-input" data-text="vak15-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak16">
+                <textarea class="bingo-input" data-text="vak16-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak17">
+                <textarea class="bingo-input" data-text="vak17-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak18">
+                <textarea class="bingo-input" data-text="vak18-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak19">
+                <textarea class="bingo-input" data-text="vak19-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak20">
+                <textarea class="bingo-input" data-text="vak20-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak21">
+                <textarea class="bingo-input" data-text="vak21-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak22">
+                <textarea class="bingo-input" data-text="vak22-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak23">
+                <textarea class="bingo-input" data-text="vak23-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak24">
+                <textarea class="bingo-input" data-text="vak24-text"></textarea>
+            </div>
+            <div class="bingo-vak" data-id="vak25">
+                <textarea class="bingo-input" data-text="vak25-text"></textarea>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyCIr-9I4vy94bwj1KyeC9sj7M4tn19UMHo",
+                authDomain: "bullet-journal-25f7c.firebaseapp.com",
+                projectId: "bullet-journal-25f7c",
+                storageBucket: "bullet-journal-25f7c.firebasestorage.app",
+                messagingSenderId: "927237136494",
+                appId: "1:927237136494:web:e085ca853fd3d27a5bc67f",
+                measurementId: "G-NEP596Q73W"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+
+        <script src="../JS/Cover.js"></script>
+        <script src="../JS/Firebase-init.js"></script>
+        <script src="../JS/Bingo.js"></script>
+
+</body>
+
+</html>
