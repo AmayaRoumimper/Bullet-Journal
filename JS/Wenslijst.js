@@ -3,20 +3,29 @@ const inputs = document.querySelectorAll('.wens-omschrijving, .wens-prijs, .wens
 inputs.forEach(input => {
     const key = "wenslijst_" + input.dataset.key;
 
-    // Laden
-    const saved = localStorage.getItem(key);
-    if (input.type === "checkbox") {
-        input.checked = saved === "true";
-    } else {
-        if (saved) input.value = saved;
-    }
+    // 🔥 Laden uit Firebase
+    db.collection("wenslijst").doc(key).get().then(doc => {
+        if (doc.exists) {
+            const data = doc.data();
 
-    // Opslaan
+            if (input.type === "checkbox") {
+                input.checked = data.checked || false;
+            } else {
+                input.value = data.value || "";
+            }
+        }
+    });
+
+    // 🔥 Opslaan in Firebase
     input.addEventListener('input', () => {
         if (input.type === "checkbox") {
-            localStorage.setItem(key, input.checked);
+            db.collection("wenslijst").doc(key).set({
+                checked: input.checked
+            });
         } else {
-            localStorage.setItem(key, input.value);
+            db.collection("wenslijst").doc(key).set({
+                value: input.value
+            });
         }
     });
 });
