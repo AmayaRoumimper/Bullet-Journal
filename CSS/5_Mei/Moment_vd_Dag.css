@@ -1,0 +1,97 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px; 
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; 
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.moment-box {
+  border: 2px solid #fff;
+  background: #500000;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.moment-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.day-number {
+  width: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.moment-input {
+  flex: 1;
+}
+
+.moment-input input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  padding: 4px;
+  outline: none;
+}

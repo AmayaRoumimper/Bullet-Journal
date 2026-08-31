@@ -1,0 +1,109 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.sleep-wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.sleep-grid {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sleep-grid th,
+.sleep-grid td {
+  border: 1px solid #636363;
+  text-align: center;
+  padding: 0;
+  font-size: 12px;
+}
+
+.sleep-grid thead th {
+  background: #222;
+  font-weight: 600;
+}
+
+.sleep-grid tbody th {
+  background: #1a1a1a;
+  width: 50px;
+  font-weight: 600;
+}
+
+.hour-cell {
+  display: flex;
+  height: 20px;
+}
+
+/* kwartier-vakje */
+.quarter {
+  flex: 1;
+  background: #000;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-right: 1px solid #222;
+}
+
+/* laatste kwartier zonder extra lijn */
+.quarter:last-child {
+  border-right: none;
+}
+
+/* kleur wanneer kwartier actief is */
+.quarter.active {
+  background: #4caf50;
+}

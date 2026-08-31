@@ -1,0 +1,135 @@
+body {
+  font-family: "Georgia", serif;
+  background: #000000;
+  margin: 40px;
+  padding: 0;
+  padding-top: 40px;
+  display: block;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #500000;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.logout-button:hover {
+    background-color: #500000;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+.tracker-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg {
+  overflow: visible;
+}
+
+.day-label {
+  font-size: 14px;
+  font-family: "Georgia", serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+svg path,
+svg line,
+svg text {
+  pointer-events: none;   
+}
+
+svg polygon {
+  pointer-events: auto;   
+  cursor: pointer;
+}
+
+.legenda-container {
+    display: flex;
+    flex-direction: row;      
+    justify-content: center;  
+    align-items: flex-start;
+    gap: 60px;                
+    margin-top: 40px;
+    width: 100%;
+}
+
+.legenda-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: "Georgia", serif;
+    color: white;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kleur-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+.lijn-tracker {
+    padding: 5px;
+    background: #500000;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    width: 100px;
+    font-size: 11px;
+    text-align: left;
+}
+
+.tracker-blokjes-rij {
+    display: flex;
+    flex-direction: column;  
+    gap: 6px;
+    margin-top: -6px;
+    margin-left: 22px;
+    position: absolute;      
+}
+
