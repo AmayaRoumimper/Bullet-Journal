@@ -1,6 +1,6 @@
 const HOURS = [...Array(23).keys()].map(i => i + 1).concat(0);
 const QUARTERS = ["00", "15", "30", "45"];
-const DAYS = 31;
+const DAYS = 30;
 
 let isMouseDown = false;
 let dragMode = null;
@@ -38,7 +38,7 @@ for (let day = 1; day <= DAYS; day++) {
       const quarterDiv = document.createElement("div");
       quarterDiv.classList.add("quarter");
 
-      const key = `maa_sleep_d${day}_h${hour}_q${q}`;
+      const key = `jun_sleep_d${day}_h${hour}_q${q}`;
 
       // laden
       if (localStorage.getItem(key) === "1") {

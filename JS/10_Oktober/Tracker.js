@@ -1,6 +1,6 @@
 const svg = document.getElementById("tracker");
 
-const DAYS = 30;
+const DAYS = 31;
 const LAYERS = 7; // 0–5 klikbaar, 6 = cijfers
 
 const centerX = 520;
@@ -182,8 +182,8 @@ for (let layer = 0; layer < LAYERS - 1; layer++) {
         cell.setAttribute("stroke-width", "0.5");
         cell.style.cursor = "pointer";
 
-        // ⭐ Unieke key
-        const key = `sep_cell_${layer}_${d}`;
+        // ⭐ Unieke JANUARI key
+        const key = `okt_cell_${layer}_${d}`;
 
         const saved = localStorage.getItem(key);
         if (saved) cell.setAttribute("fill", saved);
@@ -225,7 +225,7 @@ rij.style.top = `${yLine - 15}px`;
 const woordVakken = document.querySelectorAll(".tracker-blokjes-rij .lijn-tracker");
 
 woordVakken.forEach((vak) => {
-    const key = `sep_${vak.dataset.key}`;
+    const key = `okt_${vak.dataset.key}`;
     const saved = localStorage.getItem(key);
     if (saved) vak.value = saved;
 

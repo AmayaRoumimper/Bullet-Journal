@@ -15,7 +15,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   labelInput.placeholder = "Naam...";
 
   // ⭐ Unieke JANUARI key voor labels
-  labelInput.dataset.key = `sep_tracker_label_${itemIndex}`;
+  labelInput.dataset.key = `okt_tracker_label_${itemIndex}`;
 
   // laad label
   const savedLabel = localStorage.getItem(labelInput.dataset.key);
@@ -37,7 +37,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   const row1 = document.createElement("div");
   row1.classList.add("day-row");
 
-  for (let day = 1; day <= 15; day++) {
+  for (let day = 1; day <= 16; day++) {
     row1.appendChild(createDayCell(itemIndex, day));
   }
 
@@ -45,7 +45,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   const row2 = document.createElement("div");
   row2.classList.add("day-row");
 
-  for (let day = 16; day <= 30; day++) {
+  for (let day = 17; day <= 31; day++) {
     row2.appendChild(createDayCell(itemIndex, day));
   }
 
@@ -66,7 +66,7 @@ function createDayCell(itemIndex, dayNumber) {
   cell.textContent = dayNumber;
 
   // ⭐ Unieke JANUARI key voor dag-vakjes
-  const key = `sep_tracker_item${itemIndex}_day${dayNumber}`;
+  const key = `okt_tracker_item${itemIndex}_day${dayNumber}`;
 
   // laad kleur
   if (localStorage.getItem(key) === "1") {

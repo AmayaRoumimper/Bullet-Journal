@@ -1,6 +1,6 @@
 const HOURS = [...Array(23).keys()].map(i => i + 1).concat(0);
 const QUARTERS = ["00", "15", "30", "45"];
-const DAYS = 31;
+const DAYS = 30;
 
 let isMouseDown = false;
 let dragMode = null;
@@ -38,13 +38,14 @@ for (let day = 1; day <= DAYS; day++) {
       const quarterDiv = document.createElement("div");
       quarterDiv.classList.add("quarter");
 
-      // ⭐ Unieke key voor JANUARI
       const key = `sep_sleep_d${day}_h${hour}_q${q}`;
 
+      // laden
       if (localStorage.getItem(key) === "1") {
         quarterDiv.classList.add("active");
       }
 
+      // ⭐ mousedown → enkelklik én start slepen
       quarterDiv.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isMouseDown = true;
@@ -52,18 +53,13 @@ for (let day = 1; day <= DAYS; day++) {
         const isActive = quarterDiv.classList.contains("active");
         dragMode = isActive ? "off" : "on";
 
-        applyDragState(quarterDiv, key);
+        applyDragState(quarterDiv, key); // direct kleuren bij 1× klik
       });
 
+      // ⭐ mouseenter → tijdens slepen
       quarterDiv.addEventListener("mouseenter", () => {
         if (!isMouseDown || !dragMode) return;
         applyDragState(quarterDiv, key);
-      });
-
-      quarterDiv.addEventListener("click", () => {
-        if (isMouseDown) return;
-        const isActive = quarterDiv.classList.toggle("active");
-        localStorage.setItem(key, isActive ? "1" : "0");
       });
 
       hourDiv.appendChild(quarterDiv);
@@ -76,6 +72,9 @@ for (let day = 1; day <= DAYS; day++) {
   daysBody.appendChild(tr);
 }
 
+// -----------------------------
+// HELPER
+// -----------------------------
 function applyDragState(quarterDiv, key) {
   if (dragMode === "on") {
     quarterDiv.classList.add("active");
@@ -86,6 +85,9 @@ function applyDragState(quarterDiv, key) {
   }
 }
 
+// -----------------------------
+// MUIS LOS
+// -----------------------------
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
   dragMode = null;

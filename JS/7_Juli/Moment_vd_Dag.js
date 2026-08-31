@@ -1,7 +1,7 @@
 const momentList = document.getElementById("moment-list");
 
 // 31 regels maken
-for (let day = 1; day <= 30; day++) {
+for (let day = 1; day <= 31; day++) {
 
   const row = document.createElement("div");
   row.classList.add("moment-row");
@@ -20,8 +20,8 @@ for (let day = 1; day <= 30; day++) {
   input.type = "text";
   input.placeholder = "Moment van de dag...";
 
-  // ⭐ Unieke key 
-  input.dataset.key = `sep_moment_day_${day}`;
+  // ⭐ Unieke key voor JANUARI
+  input.dataset.key = `jul_moment_day_${day}`;
 
   // laden
   const saved = localStorage.getItem(input.dataset.key);

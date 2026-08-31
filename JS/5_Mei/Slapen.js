@@ -38,7 +38,7 @@ for (let day = 1; day <= DAYS; day++) {
       const quarterDiv = document.createElement("div");
       quarterDiv.classList.add("quarter");
 
-      const key = `maa_sleep_d${day}_h${hour}_q${q}`;
+      const key = `mei_sleep_d${day}_h${hour}_q${q}`;
 
       // laden
       if (localStorage.getItem(key) === "1") {

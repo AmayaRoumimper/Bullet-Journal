@@ -21,7 +21,7 @@ for (let day = 1; day <= 30; day++) {
   input.placeholder = "Moment van de dag...";
 
   // ⭐ Unieke key 
-  input.dataset.key = `sep_moment_day_${day}`;
+  input.dataset.key = `nov_moment_day_${day}`;
 
   // laden
   const saved = localStorage.getItem(input.dataset.key);
