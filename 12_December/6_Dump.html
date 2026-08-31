@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bullet Journal – Dump</title>
+    <link rel="stylesheet" href="../CSS/12_December/Dump.css">
+</head>
+
+<body>
+    <div id="login">
+        <h2>Log in</h2>
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="password" id="password" placeholder="Wachtwoord">
+        <button id="loginBtn">Log in</button>
+        <p id="loginError" style="color:red; display:none;">Login mislukt</p>
+    </div>
+
+    <div id="content" style="display:none;">
+
+        <button id="logoutBtn" class="logout-button">Uitloggen</button>
+
+        <nav>
+            <a href="../index.html">Cover</a>
+            <a href="1_December.html">December</a>
+            <a href="2_Sporten.html">Sporten</a>
+            <a href="3_Tracker.html">Tracker</a>
+            <a href="4_Slapen.html">Slapen</a>
+            <a href="5_Tracker2.html">Tracker2</a>
+            <a href="6_Dump.html">Dump</a>
+            <a href="7_Moment_vd_Dag.html">Moment vd dag</a>
+        </nav>
+
+        <h1 class="title">Dump</h1>
+
+        <div class="woorden-drie">
+            <textarea class="box links" data-id="dump-woord1" placeholder="Typ hier..."></textarea>
+            <textarea class="box midden" data-id="dump-woord2" placeholder="Typ hier..."></textarea>
+            <textarea class="box rechts" data-id="dump-woord3" placeholder="Typ hier..."></textarea>
+        </div>
+
+        <div class="woorden-drie">
+            <textarea class="box links" data-id="dump-woord4" placeholder="Typ hier..."></textarea>
+            <textarea class="box midden" data-id="dump-woord5" placeholder="Typ hier..."></textarea>
+            <textarea class="box rechts" data-id="dump-woord6" placeholder="Typ hier..."></textarea>
+        </div>
+
+        <div class="woorden-drie">
+            <textarea class="box links" data-id="dump-woord7" placeholder="Typ hier..."></textarea>
+            <textarea class="box midden" data-id="dump-woord8" placeholder="Typ hier..."></textarea>
+            <textarea class="box rechts" data-id="dump-woord9" placeholder="Typ hier..."></textarea>
+        </div>
+
+        <div class="woorden-drie">
+            <textarea class="box links" data-id="dump-woord10" placeholder="Typ hier..."></textarea>
+            <textarea class="box midden" data-id="dump-woord11" placeholder="Typ hier..."></textarea>
+            <textarea class="box rechts" data-id="dump-woord12" placeholder="Typ hier..."></textarea>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+        <script src="../JS/Firebase-init.js"></script>
+        <script src="../JS/Cover.js"></script>
+        <script src="../JS/12_December/Dump.js"></script>
+
+</body>
+
+</html>
