@@ -1,7 +1,7 @@
 const svg = document.getElementById("tracker");
 
 const DAYS = 31;
-const LAYERS = 7; // 0–5 klikbaar, 6 = cijfers
+const LAYERS = 7;
 
 const centerX = 520;
 const centerY = 350;
@@ -17,8 +17,7 @@ const sectorAngle = arcAngle / DAYS;
 const endAngle = startAngle + arcAngle;
 
 const resetColor = "#000000";
-
-const singleColor = "#f9fcf9"; // kies zelf
+const singleColor = "#f9fcf9";
 
 const ringColors = {
     3: [
@@ -51,7 +50,7 @@ const ringColors = {
 };
 
 // -----------------------------
-// 1. LIJNEN (pointer-events uit)
+// 1. LIJNEN
 // -----------------------------
 function noClick(el) {
     el.style.pointerEvents = "none";
@@ -182,11 +181,16 @@ for (let layer = 0; layer < LAYERS - 1; layer++) {
         cell.setAttribute("stroke-width", "0.5");
         cell.style.cursor = "pointer";
 
-        // ⭐ Unieke JANUARI key
+        // ⭐ Unieke AUGUSTUS key
         const key = `aug_cell_${layer}_${d}`;
 
-        const saved = localStorage.getItem(key);
-        if (saved) cell.setAttribute("fill", saved);
+        // 🔥 Laden uit Firebase
+        db.collection("aug_tracker_cells").doc(key).get().then(doc => {
+            if (doc.exists) {
+                const saved = doc.data().color;
+                if (saved) cell.setAttribute("fill", saved);
+            }
+        });
 
         cell.addEventListener("click", () => {
             const current = cell.getAttribute("fill");
@@ -194,7 +198,11 @@ for (let layer = 0; layer < LAYERS - 1; layer++) {
             if (layer <= 2) {
                 const newColor = (current === resetColor) ? singleColor : resetColor;
                 cell.setAttribute("fill", newColor);
-                localStorage.setItem(key, newColor);
+
+                db.collection("aug_tracker_cells").doc(key).set({
+                    color: newColor
+                });
+
                 return;
             }
 
@@ -203,14 +211,19 @@ for (let layer = 0; layer < LAYERS - 1; layer++) {
             const newColor = set[(idx + 1) % set.length];
 
             cell.setAttribute("fill", newColor);
-            localStorage.setItem(key, newColor);
+
+            db.collection("aug_tracker_cells").doc(key).set({
+                color: newColor
+            });
         });
 
         svg.appendChild(cell);
     }
 }
 
-// ⭐ BLOKJES-RIJ
+// -----------------------------
+// BLOKJES-RIJ
+// -----------------------------
 const rij = document.querySelector(".tracker-blokjes-rij");
 
 const r = innerRadius + 0 * ringThickness;
@@ -221,15 +234,25 @@ const xLine = centerX + r * Math.cos(startAngle);
 rij.style.left = `${xLine - 240}px`;
 rij.style.top = `${yLine - 15}px`;
 
-// ⭐ BLOKJES OPSLAAN
+// -----------------------------
+// BLOKJES OPSLAAN (Firebase)
+// -----------------------------
 const woordVakken = document.querySelectorAll(".tracker-blokjes-rij .lijn-tracker");
 
 woordVakken.forEach((vak) => {
     const key = `aug_${vak.dataset.key}`;
-    const saved = localStorage.getItem(key);
-    if (saved) vak.value = saved;
 
+    // 🔥 Laden uit Firebase
+    db.collection("aug_tracker_words").doc(key).get().then(doc => {
+        if (doc.exists) {
+            vak.value = doc.data().value || "";
+        }
+    });
+
+    // 🔥 Opslaan in Firebase
     vak.addEventListener("input", () => {
-        localStorage.setItem(key, vak.value);
+        db.collection("aug_tracker_words").doc(key).set({
+            value: vak.value
+        });
     });
 });

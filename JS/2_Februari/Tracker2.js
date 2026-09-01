@@ -14,16 +14,21 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   labelInput.type = "text";
   labelInput.placeholder = "Naam...";
 
-  // ⭐ Unieke key
+  // ⭐ Unieke FEBRUARI key voor labels
   labelInput.dataset.key = `feb_tracker_label_${itemIndex}`;
 
-  // laad label
-  const savedLabel = localStorage.getItem(labelInput.dataset.key);
-  if (savedLabel) labelInput.value = savedLabel;
+  // 🔥 laad label uit Firebase
+  db.collection("feb_tracker_labels").doc(labelInput.dataset.key).get().then(doc => {
+    if (doc.exists) {
+      labelInput.value = doc.data().value || "";
+    }
+  });
 
-  // opslaan label
+  // 🔥 opslaan label in Firebase
   labelInput.addEventListener("input", () => {
-    localStorage.setItem(labelInput.dataset.key, labelInput.value);
+    db.collection("feb_tracker_labels").doc(labelInput.dataset.key).set({
+      value: labelInput.value
+    });
   });
 
   label.appendChild(labelInput);
@@ -41,7 +46,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
     row1.appendChild(createDayCell(itemIndex, day));
   }
 
-  // rij 2: 15 t/m 28
+  // rij 2: 15 t/m 28 (FEBRUARI)
   const row2 = document.createElement("div");
   row2.classList.add("day-row");
 
@@ -65,18 +70,23 @@ function createDayCell(itemIndex, dayNumber) {
 
   cell.textContent = dayNumber;
 
-  // ⭐ Unieke key
+  // ⭐ Unieke FEBRUARI key voor dag-vakjes
   const key = `feb_tracker_item${itemIndex}_day${dayNumber}`;
 
-  // laad kleur
-  if (localStorage.getItem(key) === "1") {
-    cell.classList.add("active");
-  }
+  // 🔥 laad kleur uit Firebase
+  db.collection("feb_tracker_days").doc(key).get().then(doc => {
+    if (doc.exists && doc.data().active === true) {
+      cell.classList.add("active");
+    }
+  });
 
-  // klik togglen
+  // 🔥 klik togglen + opslaan in Firebase
   cell.addEventListener("click", () => {
     const active = cell.classList.toggle("active");
-    localStorage.setItem(key, active ? "1" : "0");
+
+    db.collection("feb_tracker_days").doc(key).set({
+      active: active
+    });
   });
 
   return cell;

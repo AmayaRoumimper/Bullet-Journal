@@ -7,21 +7,20 @@ sportVakjes.forEach((vak, index) => {
     // ⭐ Unieke key voor JANUARI
     const key = "jul_sportvak_" + index;
 
-    const saved = localStorage.getItem(key);
-
-    if (saved === "gekozen") {
-        vak.classList.add("gekozen");
-    }
+    // 🔥 laden uit Firebase
+    db.collection("jul_sport").doc(key).get().then(doc => {
+        if (doc.exists && doc.data().gekozen === true) {
+            vak.classList.add("gekozen");
+        }
+    });
 
     // klikgedrag
     vak.addEventListener("click", () => {
         vak.classList.toggle("gekozen");
 
-        // opslaan
-        if (vak.classList.contains("gekozen")) {
-            localStorage.setItem(key, "gekozen");
-        } else {
-            localStorage.removeItem(key);
-        }
+        // 🔥 opslaan in Firebase
+        db.collection("jul_sport").doc(key).set({
+            gekozen: vak.classList.contains("gekozen")
+        });
     });
 });

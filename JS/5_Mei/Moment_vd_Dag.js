@@ -20,16 +20,22 @@ for (let day = 1; day <= 31; day++) {
   input.type = "text";
   input.placeholder = "Moment van de dag...";
 
-  // ⭐ Unieke key
-  input.dataset.key = `mei_moment_day_${day}`;
+  // ⭐ Unieke key voor JANUARI
+  const key = `mei_moment_day_${day}`;
+  input.dataset.key = key;
 
-  // laden
-  const saved = localStorage.getItem(input.dataset.key);
-  if (saved) input.value = saved;
+  /* 🔥 1. Laden uit Firebase */
+  db.collection("mei_moment").doc(key).get().then(doc => {
+    if (doc.exists) {
+      input.value = doc.data().value || "";
+    }
+  });
 
-  // opslaan
+  /* 🔥 2. Opslaan in Firebase */
   input.addEventListener("input", () => {
-    localStorage.setItem(input.dataset.key, input.value);
+    db.collection("mei_moment").doc(key).set({
+      value: input.value
+    });
   });
 
   inputBox.appendChild(input);

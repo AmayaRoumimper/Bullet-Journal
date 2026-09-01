@@ -14,16 +14,21 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   labelInput.type = "text";
   labelInput.placeholder = "Naam...";
 
-  // ⭐ Unieke JANUARI key voor labels
+  // ⭐ Unieke NOVEMBER key voor labels
   labelInput.dataset.key = `nov_tracker_label_${itemIndex}`;
 
-  // laad label
-  const savedLabel = localStorage.getItem(labelInput.dataset.key);
-  if (savedLabel) labelInput.value = savedLabel;
+  // 🔥 laad label uit Firebase
+  db.collection("nov_tracker_labels").doc(labelInput.dataset.key).get().then(doc => {
+    if (doc.exists) {
+      labelInput.value = doc.data().value || "";
+    }
+  });
 
-  // opslaan label
+  // 🔥 opslaan label in Firebase
   labelInput.addEventListener("input", () => {
-    localStorage.setItem(labelInput.dataset.key, labelInput.value);
+    db.collection("nov_tracker_labels").doc(labelInput.dataset.key).set({
+      value: labelInput.value
+    });
   });
 
   label.appendChild(labelInput);
@@ -33,7 +38,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
   const grid = document.createElement("div");
   grid.classList.add("days-grid");
 
-  // rij 1: 1 t/m 16
+  // rij 1: 1 t/m 15
   const row1 = document.createElement("div");
   row1.classList.add("day-row");
 
@@ -41,7 +46,7 @@ for (let itemIndex = 1; itemIndex <= 8; itemIndex++) {
     row1.appendChild(createDayCell(itemIndex, day));
   }
 
-  // rij 2: 17 t/m 31
+  // rij 2: 16 t/m 30 (NOVEMBER)
   const row2 = document.createElement("div");
   row2.classList.add("day-row");
 
@@ -65,18 +70,23 @@ function createDayCell(itemIndex, dayNumber) {
 
   cell.textContent = dayNumber;
 
-  // ⭐ Unieke JANUARI key voor dag-vakjes
+  // ⭐ Unieke NOVEMBER key voor dag-vakjes
   const key = `nov_tracker_item${itemIndex}_day${dayNumber}`;
 
-  // laad kleur
-  if (localStorage.getItem(key) === "1") {
-    cell.classList.add("active");
-  }
+  // 🔥 laad kleur uit Firebase
+  db.collection("nov_tracker_days").doc(key).get().then(doc => {
+    if (doc.exists && doc.data().active === true) {
+      cell.classList.add("active");
+    }
+  });
 
-  // klik togglen
+  // 🔥 klik togglen + opslaan in Firebase
   cell.addEventListener("click", () => {
     const active = cell.classList.toggle("active");
-    localStorage.setItem(key, active ? "1" : "0");
+
+    db.collection("nov_tracker_days").doc(key).set({
+      active: active
+    });
   });
 
   return cell;
