@@ -1,4 +1,4 @@
-const HOURS = [...Array(23).keys()].map(i => i + 1).concat(0);
+const HOURS = [...Array(24).keys()];
 const QUARTERS = ["00", "15", "30", "45"];
 const DAYS = 31;
 
@@ -40,12 +40,10 @@ for (let day = 1; day <= DAYS; day++) {
 
       const key = `jan_sleep_d${day}_h${hour}_q${q}`;
 
-      // 🔥 laden uit Firebase
-      db.collection("jan_sleep").doc(key).get().then(doc => {
-        if (doc.exists && doc.data().active === true) {
-          quarterDiv.classList.add("active");
-        }
-      });
+      // laden
+      if (localStorage.getItem(key) === "1") {
+        quarterDiv.classList.add("active");
+      }
 
       // ⭐ mousedown → enkelklik én start slepen
       quarterDiv.addEventListener("mousedown", (e) => {
@@ -80,10 +78,10 @@ for (let day = 1; day <= DAYS; day++) {
 function applyDragState(quarterDiv, key) {
   if (dragMode === "on") {
     quarterDiv.classList.add("active");
-    db.collection("jan_sleep").doc(key).set({ active: true });
+    localStorage.setItem(key, "1");
   } else if (dragMode === "off") {
     quarterDiv.classList.remove("active");
-    db.collection("jan_sleep").doc(key).set({ active: false });
+    localStorage.setItem(key, "0");
   }
 }
 
