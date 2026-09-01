@@ -71,7 +71,7 @@ nav a:hover {
 
 .sporten-grid {
   display: grid;
-  grid-template-columns: 60px repeat(12, 40px);
+  grid-template-columns: 60px repeat(11, 40px);
   gap: 4px;
   margin: 40px auto;
   width: fit-content;
