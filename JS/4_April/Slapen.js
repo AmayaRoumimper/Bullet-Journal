@@ -1,25 +1,24 @@
-const HOURS = [...Array(23).keys()].map(i => i + 1).concat(0);
+const HOURS = [...Array(24).keys()];
 const QUARTERS = ["00", "15", "30", "45"];
-const DAYS = 30;
+const DAYS = 31;
 
 let isMouseDown = false;
 let dragMode = null;
 
-// -----------------------------
-// HEADER
-// -----------------------------
 const hoursRow = document.getElementById("hours-row");
-
 HOURS.forEach(h => {
   const th = document.createElement("th");
   th.textContent = h;
   hoursRow.appendChild(th);
 });
 
-// -----------------------------
-// TABEL GENEREREN
-// -----------------------------
 const daysBody = document.getElementById("days-body");
+
+// -----------------------------
+// DAGDOCUMENTEN MAKEN
+// -----------------------------
+const dayRows = [];
+const dayQuarterCells = [];
 
 for (let day = 1; day <= DAYS; day++) {
   const tr = document.createElement("tr");
@@ -28,39 +27,17 @@ for (let day = 1; day <= DAYS; day++) {
   th.textContent = day;
   tr.appendChild(th);
 
+  const quarterCells = [];
+
   HOURS.forEach(hour => {
     const td = document.createElement("td");
-
     const hourDiv = document.createElement("div");
     hourDiv.classList.add("hour-cell");
 
     QUARTERS.forEach(q => {
       const quarterDiv = document.createElement("div");
       quarterDiv.classList.add("quarter");
-
-      const key = `apr_sleep_d${day}_h${hour}_q${q}`;
-
-      // laden
-      if (localStorage.getItem(key) === "1") {
-        quarterDiv.classList.add("active");
-      }
-
-      // ⭐ mousedown → enkelklik én start slepen
-      quarterDiv.addEventListener("mousedown", (e) => {
-        e.preventDefault();
-        isMouseDown = true;
-
-        const isActive = quarterDiv.classList.contains("active");
-        dragMode = isActive ? "off" : "on";
-
-        applyDragState(quarterDiv, key); // direct kleuren bij 1× klik
-      });
-
-      // ⭐ mouseenter → tijdens slepen
-      quarterDiv.addEventListener("mouseenter", () => {
-        if (!isMouseDown || !dragMode) return;
-        applyDragState(quarterDiv, key);
-      });
+      quarterCells.push(quarterDiv);
 
       hourDiv.appendChild(quarterDiv);
     });
@@ -70,25 +47,75 @@ for (let day = 1; day <= DAYS; day++) {
   });
 
   daysBody.appendChild(tr);
+
+  dayRows.push(tr);
+  dayQuarterCells.push(quarterCells);
 }
 
 // -----------------------------
-// HELPER
+// LADEN VAN FIREBASE
 // -----------------------------
-function applyDragState(quarterDiv, key) {
-  if (dragMode === "on") {
-    quarterDiv.classList.add("active");
-    localStorage.setItem(key, "1");
-  } else if (dragMode === "off") {
-    quarterDiv.classList.remove("active");
-    localStorage.setItem(key, "0");
-  }
+for (let day = 1; day <= DAYS; day++) {
+  const cells = dayQuarterCells[day - 1];
+
+  db.collection("apr_sleep").doc(`day_${day}`).get().then(doc => {
+    if (doc.exists) {
+      const data = doc.data();
+      const active = data.active || [];
+
+      active.forEach((state, i) => {
+        if (state) cells[i].classList.add("active");
+      });
+    }
+  });
 }
 
 // -----------------------------
-// MUIS LOS
+// OPSLAAN IN FIREBASE
+// -----------------------------
+function saveDay(day) {
+  const cells = dayQuarterCells[day - 1];
+  const active = cells.map(c => c.classList.contains("active"));
+
+  db.collection("apr_sleep").doc(`day_${day}`).set({
+    active
+  });
+}
+
+// -----------------------------
+// SLEPEN / KLIKKEN
 // -----------------------------
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
   dragMode = null;
 });
+
+dayQuarterCells.forEach((cells, dayIndex) => {
+  cells.forEach((quarterDiv, quarterIndex) => {
+    quarterDiv.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      isMouseDown = true;
+
+      const isActive = quarterDiv.classList.contains("active");
+      dragMode = isActive ? "off" : "on";
+
+      applyDragState(quarterDiv);
+      saveDay(dayIndex + 1);
+    });
+
+    quarterDiv.addEventListener("mouseenter", () => {
+      if (!isMouseDown || !dragMode) return;
+
+      applyDragState(quarterDiv);
+      saveDay(dayIndex + 1);
+    });
+  });
+});
+
+function applyDragState(quarterDiv) {
+  if (dragMode === "on") {
+    quarterDiv.classList.add("active");
+  } else {
+    quarterDiv.classList.remove("active");
+  }
+}
