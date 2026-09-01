@@ -40,12 +40,14 @@ for (let day = 1; day <= DAYS; day++) {
 
       const key = `jan_sleep_d${day}_h${hour}_q${q}`;
 
-      // laden
-      if (localStorage.getItem(key) === "1") {
-        quarterDiv.classList.add("active");
-      }
+      /* 🔥 LADEN UIT FIREBASE */
+      db.collection("jan_sleep").doc(key).get().then(doc => {
+        if (doc.exists && doc.data().active === true) {
+          quarterDiv.classList.add("active");
+        }
+      });
 
-      // ⭐ mousedown → enkelklik én start slepen
+      /* 🔥 KLIK + SLEPEN */
       quarterDiv.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isMouseDown = true;
@@ -53,10 +55,9 @@ for (let day = 1; day <= DAYS; day++) {
         const isActive = quarterDiv.classList.contains("active");
         dragMode = isActive ? "off" : "on";
 
-        applyDragState(quarterDiv, key); // direct kleuren bij 1× klik
+        applyDragState(quarterDiv, key);
       });
 
-      // ⭐ mouseenter → tijdens slepen
       quarterDiv.addEventListener("mouseenter", () => {
         if (!isMouseDown || !dragMode) return;
         applyDragState(quarterDiv, key);
@@ -78,10 +79,10 @@ for (let day = 1; day <= DAYS; day++) {
 function applyDragState(quarterDiv, key) {
   if (dragMode === "on") {
     quarterDiv.classList.add("active");
-    localStorage.setItem(key, "1");
+    db.collection("jan_sleep").doc(key).set({ active: true });
   } else if (dragMode === "off") {
     quarterDiv.classList.remove("active");
-    localStorage.setItem(key, "0");
+    db.collection("jan_sleep").doc(key).set({ active: false });
   }
 }
 
