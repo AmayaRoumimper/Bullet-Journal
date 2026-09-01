@@ -1,23 +1,26 @@
+// alle vakjes selecteren
 const sportVakjes = document.querySelectorAll('.vak');
 
+// bij het laden: opgeslagen kleuren toepassen
 sportVakjes.forEach((vak, index) => {
 
     // ⭐ Unieke key voor JANUARI
-    const key = `jan_sportvak_${index}`;
+    const key = "jan_sportvak_" + index;
 
-    /* 🔥 1. Laden uit Firebase */
+    // 🔥 laden uit Firebase
     db.collection("jan_sport").doc(key).get().then(doc => {
         if (doc.exists && doc.data().gekozen === true) {
             vak.classList.add("gekozen");
         }
     });
 
-    /* 🔥 2. Klikgedrag + opslaan in Firebase */
+    // klikgedrag
     vak.addEventListener("click", () => {
-        const isChosen = vak.classList.toggle("gekozen");
+        vak.classList.toggle("gekozen");
 
+        // 🔥 opslaan in Firebase
         db.collection("jan_sport").doc(key).set({
-            gekozen: isChosen
+            gekozen: vak.classList.contains("gekozen")
         });
     });
 });

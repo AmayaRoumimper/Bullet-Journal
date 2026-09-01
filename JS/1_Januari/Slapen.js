@@ -40,14 +40,14 @@ for (let day = 1; day <= DAYS; day++) {
 
       const key = `jan_sleep_d${day}_h${hour}_q${q}`;
 
-      /* 🔥 LADEN UIT FIREBASE */
+      // 🔥 laden uit Firebase
       db.collection("jan_sleep").doc(key).get().then(doc => {
         if (doc.exists && doc.data().active === true) {
           quarterDiv.classList.add("active");
         }
       });
 
-      /* 🔥 KLIK + SLEPEN */
+      // ⭐ mousedown → enkelklik én start slepen
       quarterDiv.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isMouseDown = true;
@@ -55,9 +55,10 @@ for (let day = 1; day <= DAYS; day++) {
         const isActive = quarterDiv.classList.contains("active");
         dragMode = isActive ? "off" : "on";
 
-        applyDragState(quarterDiv, key);
+        applyDragState(quarterDiv, key); // direct kleuren bij 1× klik
       });
 
+      // ⭐ mouseenter → tijdens slepen
       quarterDiv.addEventListener("mouseenter", () => {
         if (!isMouseDown || !dragMode) return;
         applyDragState(quarterDiv, key);
