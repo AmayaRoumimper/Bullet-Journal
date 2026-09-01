@@ -16,10 +16,13 @@ const arcAngle = 2 * Math.PI * arcFraction;
 const sectorAngle = arcAngle / DAYS;
 const endAngle = startAngle + arcAngle;
 
+const resetColor = "#000000";
+
 const singleColor = "#f9fcf9"; // kies zelf
 
 const ringColors = {
     3: [
+        resetColor,
         "#00cc00",
         "#55cc00",
         "#aacc00",
@@ -29,6 +32,7 @@ const ringColors = {
     ],
 
     4: [
+        resetColor,
         "#0066ff",
         "#3399ff",
         "#66b3ff",
@@ -37,6 +41,7 @@ const ringColors = {
     ],
 
     5: [
+        resetColor,
         "#ff66cc",
         "#ff33cc",
         "#cc00cc",
